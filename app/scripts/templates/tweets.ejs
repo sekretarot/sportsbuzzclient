@@ -1,0 +1,10 @@
+<div id="tweets">
+	<% _.each(tweets, function(tweet){ %>
+		<div class="tweet">		
+			<img src="<%= tweet.ProfileImageUrl %>">
+			<span><%= tweet.ScreenName %>: <%= tweet.TweetText %></span> 
+			<span><%= tweet.datePosted %></span>
+		</div>
+	<% }); %>
+</div>
+<a id="loadMore" href="" class="btn btn-lg btn-success">Load more...</a>

@@ -1,0 +1,17 @@
+<h2>Popular stories</h2>
+
+<div id="stories">
+	<% _.each(stories, function(story){ %>
+		<div class="story">	
+			<%if (story.Type = 0) { %>
+				<strong>Daily digest</strong> 
+			<% } else if (story.Type = 1) {%>	
+				<strong>Weekly digest</strong> 
+			<% } else if (story.Type = 2) {%>	
+				<strong>Monthly digest</strong> 
+			<% } %>	
+			<br/>
+			<span><%= story.Title%></span> 
+		</div>
+	<% }); %>
+</div>
