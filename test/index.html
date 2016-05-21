@@ -16,9 +16,18 @@
     var should = chai.should();
   </script>
   <!-- bower:js -->
+  <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+     <script type="text/javascript" src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- endbuild -->
   <!-- endbower -->
   <!-- include source files here... -->
-  <script src="routers/router.js"></script>
+  <script src="main.js"></script>
+  <script src="templates/templates.js"></script>
+  <script src="routes/router.js"></script>
   <script src="models/tweet.js"></script>
   <script src="collections/tweets.js"></script>
   <script src="views/tweet.js"></script>
@@ -27,8 +36,13 @@
   <script src="models/story.js"></script>
   <script src="collections/stories.js"></script>
   <script src="views/stories.js"></script>
+  <script src="views/archive.js"></script>
   <!-- include spec files here... -->
   <script src="spec/test.js"></script>
+  <script src="models/tweet.spec.js"></script>
+  <script src="models/story.spec.js"></script>
+  <script src="collections/tweets.spec.js"></script>
+  <script src="collections/stories.spec.js"></script>
   <script>
     if (navigator.userAgent.indexOf('PhantomJS') === -1) {
       mocha.run();

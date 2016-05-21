@@ -1,10 +1,84 @@
-<div id="tweets">
-	<% _.each(tweets, function(tweet){ %>
-		<div class="tweet">		
-			<img src="<%= tweet.ProfileImageUrl %>">
-			<span><%= tweet.ScreenName %>: <%= tweet.TweetText %></span> 
-			<span><%= tweet.datePosted %></span>
-		</div>
-	<% }); %>
+<% if(headerText) {%>
+	<h1 id="header-text"><%= headerText %></h1>
+<% } %>	
+
+<!-- Digest buttons -->
+<%if (type == SportsBuzzClient.tweetsCategory.NBA) { %>
+	<a href="#NBAStories/daily" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Daily digest
+	</a>
+	<a href="#NBAStories/weekly" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Weekly digest
+	</a>
+	<a href="#NBAStories/monthly" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Monthly digest
+	</a>
+<% } %>
+
+<%if (type == SportsBuzzClient.tweetsCategory.NFL) { %>
+	<a href="#NFLStories/daily" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Daily digest
+	</a>
+	<a href="#NFLStories/weekly" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Weekly digest
+	</a>
+	<a href="#NFLStories/monthly" class="btn btn-lg btn-success col-sm-4 col-xs-12">
+		Monthly digest
+	</a>
+<% } %>
+
+<!-- Tweets feed -->
+<div id="tweets" class="row">
+	<div class=" col-sm-12 col-md-4">
+		<% _.each(tweets, function(tweet,index){ %>
+			<% if(index%3==0) {%>
+				<div id="tweets-col-1" class="tweet panel panel-default panel-animated animated fadeInUp">	
+					<div class="profile-line clearfix">	
+						<img class="img-circle pull-left" src="<%= tweet.ProfileImageUrl %>">
+						<div class="text-14"><strong><%= tweet.UserName %></strong></div>
+						<span><%= tweet.ScreenName %> </span> 
+					</div>
+					<div class="panel-body"> 
+						<%= tweet.TweetText %>
+					</div>
+					<span class="tweet-time"><%= moment(tweet.datePosted).fromNow() %></span>
+				</div>
+			<% } %>	
+		<% }); %>
+	</div>
+	<div class=" col-sm-12 col-md-4">
+		<% _.each(tweets, function(tweet,index){ %>
+			<% if(index%3==1) {%>
+				<div id="tweets-col-2" class="tweet panel panel-default panel-animated animated fadeInUp">	
+					<div class="profile-line clearfix">	
+						<img class="img-circle pull-left" src="<%= tweet.ProfileImageUrl %>">
+						<div class="text-14"><strong><%= tweet.UserName %></strong></div>
+						<span><%= tweet.ScreenName %> </span> 
+					</div>
+					<div class="panel-body"> 
+						<%= tweet.TweetText %>
+					</div>
+					<span class="tweet-time"><%= moment(tweet.datePosted).fromNow() %></span>
+				</div>
+			<% } %>	
+		<% }); %>
+	</div>
+	<div class="col-sm-12 col-md-4">
+		<% _.each(tweets, function(tweet,index){ %>
+			<% if(index%3==2) {%>
+				<div id="tweets-col-2" class="tweet panel panel-default panel-animated animated fadeInUp">	
+					<div class="profile-line clearfix">	
+						<img class="img-circle pull-left" src="<%= tweet.ProfileImageUrl %>">
+						<div class="text-14"><strong><%= tweet.UserName %></strong></div>
+						<span><%= tweet.ScreenName %> </span> 
+					</div>
+					<div class="panel-body"> 
+						<%= tweet.TweetText %>
+					</div>
+					<span class="tweet-time"><%= moment(tweet.datePosted).fromNow() %></span>
+				</div>
+			<% } %>	
+		<% }); %>
+	</div>
 </div>
 <a id="loadMore" href="" class="btn btn-lg btn-success">Load more...</a>

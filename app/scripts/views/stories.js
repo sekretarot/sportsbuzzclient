@@ -11,17 +11,17 @@ SportsBuzzClient.Views = SportsBuzzClient.Views || {};
 
     tagName: 'div',
 
-    id: 'tweets',
+    id: 'tweets-container',
 
     className: '',
 
-    el: "#tweets",
+    el: '#tweets-container',
 
     events: {},
 
     initialize: function (options) {
       this.collection = options.collection;
-      this.listenTo(this.collection, "change reset", this.render);
+      this.listenTo(this.collection, 'change reset', this.render);
     },
 
     render: function () {

@@ -9,19 +9,24 @@ SportsBuzzClient.Collections = SportsBuzzClient.Collections || {};
 
     model: SportsBuzzClient.Models.Tweet,
 
-    url: SportsBuzzClient.APIRoot + 'json/All/' + Date.now(),
+    url: SportsBuzzClient.APIRoot + 'tweets/All/' + Date.now(),
 
 
-
-    parse:function(response) {
-	    return response.JSONDataResult;
-	},
+ //    parse:function(response) {
+ //    	if(response.JSONDataResult) {
+ //    		return response.JSONDataResult;
+ //    	}	    	
+	//     if(response.GetStoryTweetsByIDResult) {
+	//     	return response.GetStoryTweetsByIDResult;
+	//     }	    	
+	// },
 
 	getLastModelTimestamp: function() {
+		if(!this.length) { return; }
 		var lastModel = this.min(function(model) {
-		    return model.get("datePosted")
+		    return model.get('datePosted');
 		});
-		return lastModel.get("datePosted");
+		return lastModel.get('datePosted');
 	},
 
 	updateUrlWithLastModelTimestamp: function() {

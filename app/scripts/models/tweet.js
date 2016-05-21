@@ -15,15 +15,16 @@ SportsBuzzClient.Models = SportsBuzzClient.Models || {};
     defaults: {      
       ProfileImageUrl: '',
       ScreenName: '',
+      UserName: '',
       TweetText: '',
       id: '',
       datePosted: ''
     },
 
-    validate: function(attrs, options) {
+    validate: function() {
     },
 
-    parse: function(response, options)  {
+    parse: function(response)  {
       return response;
     }
   });

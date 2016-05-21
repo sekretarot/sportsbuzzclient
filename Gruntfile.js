@@ -26,6 +26,7 @@ module.exports = function (grunt) {
   // configurable paths
   var yeomanConfig = {
     app: 'app',
+    scripts: 'app/scripts',
     dist: 'dist'
   };
 
@@ -89,7 +90,8 @@ module.exports = function (grunt) {
               mountFolder(connect, 'test'),
               lrSnippet,
               mountFolder(connect, '.tmp'),
-              mountFolder(connect, yeomanConfig.app)
+              mountFolder(connect, yeomanConfig.app),
+              mountFolder(connect, yeomanConfig.scripts)
             ];
           }
         }

@@ -7,4 +7,8 @@ describe('Tweet View', function () {
         this.TweetView = new SportsBuzzClient.Views.Tweet();
     });
 
+    it("render() should return the view object", function() {
+    	assert.equal(this.TweetView.render(), this.TweetView);
+	});
+
 });

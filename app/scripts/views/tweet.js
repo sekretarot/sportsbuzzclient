@@ -20,10 +20,8 @@ SportsBuzzClient.Views = SportsBuzzClient.Views || {};
     $el: '#tweets',
 
     initialize: function () {
-      this.model = new SportsBuzzClient.Models.Tweet;
-      this.model.set({author: "aesef", text: "hehheeheh"}); 
+      this.model = new SportsBuzzClient.Models.Tweet();
       this.listenTo(this.model, 'change', this.render);
-      this.model.set({author: "Toso", text: "Alpooooooo"}); 
     },
 
     render: function () {

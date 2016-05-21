@@ -12,7 +12,7 @@ SportsBuzzClient.Collections = SportsBuzzClient.Collections || {};
     url: SportsBuzzClient.APIRoot + 'stories/NBA',
 
     parse:function(response) {
-	    return response.GetStoriesInfoResult.slice(0,20);
+	    return response.slice(0,20);
 	}
 
   });

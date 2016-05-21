@@ -5872,17 +5872,93 @@ body {
   margin-top: 28px; }
 
 .tweet {
-  border: 1px dotted #666;
-  padding: 20px;
-  margin-bottom: 10px; }
+  border-color: #E0E4E8; }
 
 .tweet img {
   float: left; }
 
+#tweets {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: -1.875em;
+  /* 30px */
+  -webkit-column-gap: 1.875em;
+  /* 30px */
+  -webkit-column-fill: auto;
+  -moz-column-gap: 1.875em;
+  /* 30px */
+  -moz-column-fill: auto;
+  column-gap: 1.875em;
+  /* 30px */
+  column-fill: auto;
+  margin: 0; }
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.875em;
+  /* 15px 30px */
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid; }
+
+.panel.panel-default {
+  border-color: #E0E4E8; }
+
+.profile-line {
+  position: relative;
+  margin: 0px 0 15px;
+  background: #E5F2F7;
+  padding: 15px; }
+
+.tweet-time {
+  color: #95a5a6; }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); } }
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp; }
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+#loadMore {
+  visibility: hidden; }
+
+.story {
+  border: 1px dotted #666;
+  margin-bottom: 10px; }
+
+.story a {
+  padding: 20px;
+  display: block; }
+
+.story img {
+  width: 100%; }
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px; }
+    min-width: 730px;
+    width: 85%; }
   /* Remove the padding we set earlier */
   .header,
   .marketing,
